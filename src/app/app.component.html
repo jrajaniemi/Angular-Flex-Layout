@@ -1,21 +1,33 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px">
+  <div fxFlex="33" fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout="center center" class="header">
+    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
+    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
+    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
+  </div>
+  <div fxFlex="33" fxLayoutGap="10px" class="two">
+
+    <mat-grid-list [cols]="cols"  gutterSize="10px" rowHeight="3:4">
+      <mat-grid-tile [style.background]="tileColor" [colspan]="firstColSpan">
+        <mat-grid-tile-header>Header</mat-grid-tile-header>
+        <p>MOIKKA</p>
+        <mat-grid-tile-footer>Footer</mat-grid-tile-footer>
+      </mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">2</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">3</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">4</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">5</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">6</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">7</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">8</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">9</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">10</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">11</mat-grid-tile>
+      <mat-grid-tile [style.background]="tileColor">12</mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+  <div fxFlex="33" class="three">three</div>
+
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
 <router-outlet></router-outlet>
