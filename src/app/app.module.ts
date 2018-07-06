@@ -12,10 +12,12 @@ import 'rxjs/add/observable/of';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpServiceComponent } from './http-service/http-service.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HttpServiceComponent
   ],
   imports: [
     BrowserModule,
