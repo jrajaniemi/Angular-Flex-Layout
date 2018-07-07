@@ -1,12 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { MediaChange, ObservableMedia } from '@angular/flex-layout';
+import { HttpsService } from 'src/app/https.service';
 
 export interface Tile {
   color: string;
   cols: number;
   rows: number;
   text: string;
+}
+
+export interface Lang {
+  fin: string;
+  eng: string;
+}
+
+export interface Word {
+  lang: string;
+  word: Lang;
 }
 
 @Component({
@@ -37,6 +48,9 @@ export class AppComponent implements OnInit{
     {text: 'Twenty', cols: 1, rows: 1, color: 'lightgrey'},
     {text: 'Twentyone', cols: 1, rows: 1, color: '#fcfcfc'},
   ];
+
+  color: string[] = [ 'lightgreen', '#fcfcfc', 'tomato' ];
+
   title = 'app';
   tileColor: string = '#eee';
 
@@ -44,7 +58,9 @@ export class AppComponent implements OnInit{
   activeMediaQuery = '';
   cols = 2;
   firstColSpan = 2;
-  constructor(media: ObservableMedia) {
+  words: Lang[];
+
+  constructor(media: ObservableMedia, private HttpsService: HttpsService) {
     this.watcher = media.subscribe((change: MediaChange) => {
       this.activeMediaQuery = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : '';
       if ( change.mqAlias === 'xs') {
@@ -69,7 +85,23 @@ export class AppComponent implements OnInit{
     });
   }
 
-  ngOnInit() {
+  searchEngWorld(word: string) {
+    this.HttpsService.getEngWords(word).subscribe(
+      data => {
+        this.words = data;
+      },
+      err => {
+        console.log(err);
+      },
+      () => {
+        console.log('done loading words');
+      }
 
+    );
+  }
+
+  ngOnInit() {
+    this.searchEngWorld('auto');
+    console.log(this.words);
   }
 }

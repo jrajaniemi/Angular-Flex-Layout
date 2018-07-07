@@ -7,7 +7,7 @@
   <div fxFlex="33" fxLayoutGap="10px" class="two">
 
     <mat-grid-list [cols]="cols"  gutterSize="10px" rowHeight="3:4">
-      <mat-grid-tile [style.background]="tile.color" [colspan]="tile.cols" [rowspan]="tile.rows" *ngFor="let tile of tiles">{{tile.text}}</mat-grid-tile>
+      <mat-grid-tile [style.background]="color[0]"  *ngFor="let word of words">{{ word.fin }} <br> {{ word.eng }}</mat-grid-tile>
     </mat-grid-list>
 
   </div>

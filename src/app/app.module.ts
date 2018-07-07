@@ -9,15 +9,14 @@ import 'rxjs/add/operator/takeWhile';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpServiceComponent } from './http-service/http-service.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HttpServiceComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +26,8 @@ import { HttpServiceComponent } from './http-service/http-service.component';
     MatCheckboxModule,
     MatIconModule,
     FlexLayoutModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
