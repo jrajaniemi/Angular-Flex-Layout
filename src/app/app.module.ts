@@ -1,7 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule, MatButtonModule, MatCheckboxModule, MatIconModule } from '@angular/material';
+import {
+  MatGridListModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatIconModule
+} from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Observable } from 'rxjs/Observable';
 import { ObservableMedia } from '@angular/flex-layout';
@@ -15,9 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,9 +32,10 @@ import { AppComponent } from './app.component';
     MatIconModule,
     FlexLayoutModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

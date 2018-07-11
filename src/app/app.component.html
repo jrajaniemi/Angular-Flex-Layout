@@ -1,17 +1,36 @@
 <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px">
   <div fxFlex="33" fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout="center center" class="header">
-    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
-    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
-    <div fxFlex class=""><button mat-raised-button color="primary">Primary</button></div>
+    <div fxFlex class="">
+      <button mat-raised-button color="primary">Primary</button>
+    </div>
+    <div fxFlex class="">
+      <button mat-raised-button color="primary">Primary</button>
+    </div>
+    <div fxFlex class="">
+      <button mat-raised-button color="primary">Primary</button>
+    </div>
   </div>
-  <div fxFlex="33" fxLayoutGap="10px" class="two">
+  <div fxFlex="33" fxLayoutGap="20px" class="two">
 
-    <mat-grid-list [cols]="cols"  gutterSize="10px" rowHeight="3:4">
-      <mat-grid-tile [style.background]="color[0]"  *ngFor="let word of words">{{ word.fin }} <br> {{ word.eng }}</mat-grid-tile>
+    <mat-grid-list [cols]="cols" gutterSize="10px" rowHeight="3:4">
+      <mat-grid-tile *ngFor="let p of products">
+        <mat-card class="product-card">
+
+          <img mat-card-image [src]="p?.images[0]?.url1 " [alt]="p.title">
+          <mat-card-content [innerHTML]="p.title">
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
     </mat-grid-list>
 
   </div>
-  <div fxFlex="33" class="three">three</div>
+  <div fxFlex="33 " class="three ">
+
+  </div>
 
 </div>
 

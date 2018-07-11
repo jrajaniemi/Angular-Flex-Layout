@@ -9,6 +9,10 @@ export class HttpsService {
 
   constructor(private httpClient: HttpClient) {}
 
+  getFrontpage(): Observable<any> {
+    return this.httpClient.get(`http://mcl.eobox.fi/api/`);
+  }
+
   getEngWords(word: string): Observable<any> {
     return this.httpClient.get(`http://beamlab.com/api/get-eng.php?sana=${word}`);
   }
